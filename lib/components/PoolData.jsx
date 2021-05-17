@@ -1,7 +1,8 @@
 import React from 'react'
-import { getChain } from '@pooltogether/evm-chains-extended'
+// import { getChain } from '@pooltogether/evm-chains-extended'
 import { isValidAddress } from '@pooltogether/utilities'
 
+import { getChain } from 'lib/utils/avalancheNetwork'
 import { PoolTogetherLoading } from 'lib/components/PoolTogetherLoading'
 import { IncompatibleContractWarning } from 'lib/components/IncompatibleContractWarning'
 import { IndexContent } from 'lib/components/IndexContent'

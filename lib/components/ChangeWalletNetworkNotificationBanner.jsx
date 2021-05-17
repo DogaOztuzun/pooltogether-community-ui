@@ -34,13 +34,14 @@ const ChangeWalletNetworkNotification = (props) => {
   const isSupportedEthereumNetwork = ETHEREUM_NETWORKS.includes(poolChainId)
 
   const connectableNetwork = [
-    NETWORK.matic,
-    NETWORK.mumbai,
-    NETWORK.xdai,
-    NETWORK.bsc,
-    NETWORK['bsc-testnet'],
-    NETWORK.poa,
-    NETWORK['poa-sokol']
+    // NETWORK.matic,
+    // NETWORK.mumbai,
+    // NETWORK.xdai,
+    // NETWORK.bsc,
+    // NETWORK['bsc-testnet'],
+    // NETWORK.poa,
+    // NETWORK['poa-sokol']
+    NETWORK.fuji
   ]
   const isConnectableNetwork = connectableNetwork.includes(poolChainId)
 
@@ -50,6 +51,7 @@ const ChangeWalletNetworkNotification = (props) => {
   const router = useRouter()
   const isPool = Boolean(router?.query?.poolAlias || router?.query?.prizePoolAddress)
   const words = isPool ? 'this pool' : 'these pools'
+  console.log(walletChainId +"-"+ poolChainId)
 
   return (
     <div className='flex flex-col sm:flex-row justify-between items-center'>

@@ -1,7 +1,8 @@
 import React from 'react'
 import classnames from 'classnames'
-import { getChain } from '@pooltogether/evm-chains-extended'
+// import { getChain } from '@pooltogether/evm-chains-extended'
 
+import { getChain } from 'lib/utils/avalancheNetwork'
 import { SUPPORTED_NETWORKS } from 'lib/constants'
 import { useWalletNetwork } from 'lib/hooks/useWalletNetwork'
 import { networkColorClassname } from 'lib/utils/networks'

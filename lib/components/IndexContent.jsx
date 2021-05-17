@@ -2,9 +2,10 @@ import React, { useContext, useMemo, useState } from 'react'
 import FeatherIcon from 'feather-icons-react'
 import classnames from 'classnames'
 import { isValidAddress } from '@pooltogether/utilities'
-import { getChain } from '@pooltogether/evm-chains-extended'
+// import { getChain } from '@pooltogether/evm-chains-extended'
 import { useRouter } from 'next/router'
 
+import { getChain } from 'lib/utils/avalancheNetwork'
 import { CONTRACT_ADDRESSES, POOL_ALIASES, SUPPORTED_NETWORKS } from 'lib/constants'
 import { WalletContext } from 'lib/components/WalletContextProvider'
 import { ButtonLink } from 'lib/components/ButtonLink'
@@ -28,19 +29,20 @@ import { getPrecision, numberWithCommas } from 'lib/utils/numberWithCommas'
 import { NETWORK, getNetworkNameAliasByChainId } from 'lib/utils/networks'
 
 export const NETWORK_OPTIONS = {
-  'mainnet': 1,
-  'ropsten': 3,
-  'rinkeby': 4,
-  'goerli': 5,
-  'kovan': 42,
-  'bsc': 56,
-  'poa-sokol': 77,
-  'bsc-testnet': 97,
-  'xdai': 100,
-  'matic': 137,
-  // 'polygon': 137,
-  'local': 31337,
-  'mumbai': 80001
+  // 'mainnet': 1,
+  // 'ropsten': 3,
+  // 'rinkeby': 4,
+  // 'goerli': 5,
+  // 'kovan': 42,
+  // 'bsc': 56,
+  // 'poa-sokol': 77,
+  // 'bsc-testnet': 97,
+  // 'xdai': 100,
+  // 'matic': 137,
+  // // 'polygon': 137,
+  // 'local': 31337,
+  // 'mumbai': 80001,
+  'fuji': 43113
 }
 
 export const IndexContent = () => {
@@ -80,13 +82,13 @@ const PoolsLists = () => {
       <GovernancePoolsCard createdPrizePools={createdPrizePools} tokenBalances={tokenBalances} />
       <AllPoolsCard createdPrizePools={createdPrizePools} tokenBalances={tokenBalances} />
       <ReferencePoolCard />
-      <BuilderCard />
+      {/* <BuilderCard /> */}
     </>
   )
 }
 
 const ReferencePoolCard = () => {
-  const [network, setNetwork] = useState('mainnet')
+  const [network, setNetwork] = useState('fuji')
   const [contractAddress, setContractAddress] = useState('')
 
   const router = useRouter()

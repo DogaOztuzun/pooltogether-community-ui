@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import FeatherIcon from 'feather-icons-react'
 import { useAtom } from 'jotai'
-import { getChain } from '@pooltogether/evm-chains-extended'
+// import { getChain } from '@pooltogether/evm-chains-extended'
 
+import { getChain } from 'lib/utils/avalancheNetwork'
 import { NETWORKS_TO_IGNORE_VERSION_CHECKS, SUPPORTED_NETWORKS } from 'lib/constants'
 import { EMPTY_ERROR_STATE, errorStateAtom } from 'lib/atoms'
 import { useNetwork } from 'lib/hooks/useNetwork'

@@ -1,6 +1,7 @@
 import React from 'react'
-import { getChain } from '@pooltogether/evm-chains-extended'
+// import { getChain } from '@pooltogether/evm-chains-extended'
 
+import { getChain } from 'lib/utils/avalancheNetwork'
 import { SUPPORTED_NETWORKS } from 'lib/constants'
 import { NetworkIcon } from 'lib/components/NetworkIcon'
 import { NotificationBanner } from 'lib/components/NotificationBanners'

@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import classnames from 'classnames'
 import FeatherIcon from 'feather-icons-react'
-import { getChain } from '@pooltogether/evm-chains-extended'
+// import { getChain } from '@pooltogether/evm-chains-extended'
 
+import { getChain } from 'lib/utils/avalancheNetwork'
 import { WalletContext } from 'lib/components/WalletContextProvider'
 import { NetworkIcon } from 'lib/components/NetworkIcon'
 import { useEnsName } from 'lib/hooks/useEnsName'
@@ -25,7 +26,8 @@ export const WalletInfo = () => {
     chainId = currentState.appNetworkId
   }
 
-  const { shortenedEnsName } = useEnsName(address)
+  // const { shortenedEnsName } = useEnsName(address)
+  let shortenedEnsName = undefined
 
   let innerContent = null
   let networkNameJsx = null
