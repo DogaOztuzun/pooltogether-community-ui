@@ -8,15 +8,12 @@ import { NETWORK } from 'lib/utils/networks'
 
 const debug = require('debug')('WalletContextProvider')
 
-const INFURA_KEY = process.env.NEXT_JS_INFURA_KEY
-const FORTMATIC_KEY = process.env.NEXT_JS_FORTMATIC_API_KEY
-const PORTIS_KEY = process.env.NEXT_JS_PORTIS_API_KEY
+// const INFURA_KEY = process.env.NEXT_JS_INFURA_KEY
+// const FORTMATIC_KEY = process.env.NEXT_JS_FORTMATIC_API_KEY
+// const PORTIS_KEY = process.env.NEXT_JS_PORTIS_API_KEY
 
-let networkName = 'mainnet'
-const RPC_URL =
-  networkName && INFURA_KEY
-    ? `https://${networkName}.infura.io/v3/${INFURA_KEY}`
-    : 'http://localhost:8545'
+let networkName = 'fuji'
+// const RPC_URL = 'https://api.avax-test.network/ext/bc/C/rpc'
 
 let cookieOptions = { sameSite: 'strict' }
 if (process.env.NEXT_JS_DOMAIN_NAME) {
@@ -28,100 +25,100 @@ if (process.env.NEXT_JS_DOMAIN_NAME) {
 
 const APP_NAME = 'PoolTogether'
 
-const walletConnectOptions = {
-  infuraKey: INFURA_KEY,
-  preferred: true,
-  bridge: 'https://pooltogether.bridge.walletconnect.org/'
-}
+// const walletConnectOptions = {
+//   infuraKey: INFURA_KEY,
+//   preferred: true,
+//   bridge: 'https://pooltogether.bridge.walletconnect.org/'
+// }
 
 const WALLETS_CONFIG = [
   { walletName: 'metamask', preferred: true },
-  {
-    walletName: 'walletConnect',
-    ...walletConnectOptions
-  },
-  { walletName: 'rainbow', preferred: true, ...walletConnectOptions },
-  { walletName: 'argent', preferred: true, ...walletConnectOptions },
-  { walletName: 'trustWallet', preferred: true, ...walletConnectOptions },
-  { walletName: 'gnosisSafe', preferred: true, ...walletConnectOptions },
-  { walletName: 'trust', preferred: true, rpcUrl: RPC_URL },
-  { walletName: 'coinbase', preferred: true },
-  {
-    walletName: 'walletLink',
-    preferred: true,
-    rpcUrl: RPC_URL
-  },
-  {
-    walletName: 'trezor',
-    preferred: true,
-    appUrl: 'https://app.pooltogether.com',
-    email: 'hello@pooltogether.com',
-    rpcUrl: RPC_URL
-  },
-  {
-    walletName: 'ledger',
-    preferred: true,
-    rpcUrl: RPC_URL
-  },
-  {
-    walletName: 'fortmatic',
-    preferred: true,
-    apiKey: FORTMATIC_KEY
-  },
-  {
-    walletName: 'imToken',
-    preferred: true,
-    rpcUrl: RPC_URL
-  },
-  {
-    walletName: 'dcent',
-    preferred: true
-  },
-  {
-    walletName: 'huobiwallet',
-    preferred: true,
-    rpcUrl: RPC_URL
-  },
-  {
-    walletName: 'portis',
-    preferred: true,
-    apiKey: PORTIS_KEY
-  },
-  {
-    walletName: 'authereum',
-    preferred: true
-  },
-  {
-    walletName: 'status',
-    preferred: true
-  },
-  {
-    walletName: 'torus',
-    preferred: true
-  },
-  {
-    walletName: 'lattice',
-    preferred: true,
-    rpcUrl: RPC_URL,
-    appName: APP_NAME
-  },
-  {
-    walletName: 'mykey',
-    preferred: true,
-    rpcUrl: RPC_URL
-  },
-  {
-    walletName: 'opera',
-    preferred: true
-  },
-  {
-    walletName: 'operaTouch',
-    preferred: true
-  },
-  {
-    walletName: 'web3Wallet',
-    preferred: true
-  }
+  // {
+  //   walletName: 'walletConnect',
+  //   ...walletConnectOptions
+  // },
+  // { walletName: 'rainbow', preferred: false, ...walletConnectOptions },
+  // { walletName: 'argent', preferred: false, ...walletConnectOptions },
+  // { walletName: 'trustWallet', preferred: false, ...walletConnectOptions },
+  // { walletName: 'gnosisSafe', preferred: false, ...walletConnectOptions },
+  // { walletName: 'trust', preferred: false, rpcUrl: RPC_URL },
+  // { walletName: 'coinbase', preferred: false },
+  // {
+  //   walletName: 'walletLink',
+  //   preferred: false,
+  //   rpcUrl: RPC_URL
+  // },
+  // {
+  //   walletName: 'trezor',
+  //   preferred: false,
+  //   appUrl: 'https://app.pooltogether.com',
+  //   email: 'hello@pooltogether.com',
+  //   rpcUrl: RPC_URL
+  // },
+  // {
+  //   walletName: 'ledger',
+  //   preferred: false,
+  //   rpcUrl: RPC_URL
+  // },
+  // {
+  //   walletName: 'fortmatic',
+  //   preferred: false,
+  //   apiKey: FORTMATIC_KEY
+  // },
+  // {
+  //   walletName: 'imToken',
+  //   preferred: false,
+  //   rpcUrl: RPC_URL
+  // },
+  // {
+  //   walletName: 'dcent',
+  //   preferred: false
+  // },
+  // {
+  //   walletName: 'huobiwallet',
+  //   preferred: false,
+  //   rpcUrl: RPC_URL
+  // },
+  // {
+  //   walletName: 'portis',
+  //   preferred: false,
+  //   apiKey: PORTIS_KEY
+  // },
+  // {
+  //   walletName: 'authereum',
+  //   preferred: false
+  // },
+  // {
+  //   walletName: 'status',
+  //   preferred: false
+  // },
+  // {
+  //   walletName: 'torus',
+  //   preferred: false
+  // },
+  // {
+  //   walletName: 'lattice',
+  //   preferred: false,
+  //   rpcUrl: RPC_URL,
+  //   appName: APP_NAME
+  // },
+  // {
+  //   walletName: 'mykey',
+  //   preferred: false,
+  //   rpcUrl: RPC_URL
+  // },
+  // {
+  //   walletName: 'opera',
+  //   preferred: false
+  // },
+  // {
+  //   walletName: 'operaTouch',
+  //   preferred: false
+  // },
+  // {
+  //   walletName: 'web3Wallet',
+  //   preferred: false
+  // }
 ]
 
 export const WalletContext = React.createContext()
@@ -129,6 +126,7 @@ export const WalletContext = React.createContext()
 let _onboard
 
 const initializeOnboard = (setOnboardState) => {
+  console.log(networkName);
   _onboard = Onboard({
     hideBranding: true,
     networkId: NETWORK[networkName],
