@@ -41,7 +41,8 @@ const ChangeWalletNetworkNotification = (props) => {
     // NETWORK['bsc-testnet'],
     // NETWORK.poa,
     // NETWORK['poa-sokol']
-    NETWORK.fuji
+    NETWORK.fuji,
+    NETWORK.avalanche
   ]
   const isConnectableNetwork = connectableNetwork.includes(poolChainId)
 

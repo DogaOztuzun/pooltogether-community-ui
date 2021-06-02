@@ -12,7 +12,7 @@ const debug = require('debug')('WalletContextProvider')
 // const FORTMATIC_KEY = process.env.NEXT_JS_FORTMATIC_API_KEY
 // const PORTIS_KEY = process.env.NEXT_JS_PORTIS_API_KEY
 
-let networkName = 'fuji'
+let networkName = 'avalanche'
 // const RPC_URL = 'https://api.avax-test.network/ext/bc/C/rpc'
 
 let cookieOptions = { sameSite: 'strict' }

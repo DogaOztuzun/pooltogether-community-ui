@@ -42,7 +42,8 @@ export const NETWORK_OPTIONS = {
   // // 'polygon': 137,
   // 'local': 31337,
   // 'mumbai': 80001,
-  'fuji': 43113
+  'fuji': 43113,
+  'avalanche': 43114
 }
 
 export const IndexContent = () => {
@@ -79,7 +80,7 @@ const PoolsLists = () => {
   return (
     <>
       <UsersPoolsCard createdPrizePools={createdPrizePools} tokenBalances={tokenBalances} />
-      <GovernancePoolsCard createdPrizePools={createdPrizePools} tokenBalances={tokenBalances} />
+      {/* <GovernancePoolsCard createdPrizePools={createdPrizePools} tokenBalances={tokenBalances} /> */}
       <AllPoolsCard createdPrizePools={createdPrizePools} tokenBalances={tokenBalances} />
       <ReferencePoolCard />
       {/* <BuilderCard /> */}
@@ -88,7 +89,7 @@ const PoolsLists = () => {
 }
 
 const ReferencePoolCard = () => {
-  const [network, setNetwork] = useState('fuji')
+  const [network, setNetwork] = useState('avalanche')
   const [contractAddress, setContractAddress] = useState('')
 
   const router = useRouter()
